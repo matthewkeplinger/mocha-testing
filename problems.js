@@ -35,6 +35,11 @@ function multiplyTwoNumbers(num,num2){
   return num * num2;
 }
 
+//find remainder of two numbers
+function remainderTwoNumbers(num,num2){
+  return num % num2;
+}
+
 //sum of all positive integers in an array
 function sumArray(arr){
   let sum = arr.reduce(

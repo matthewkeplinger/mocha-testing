@@ -23,10 +23,13 @@ describe('addTwoNumbers', () => {
 })
 
 describe('subtractTwoNumbers', () => {
-  it('should subtract two numbers and default to 0 if negative', () => {
+  it('should subtract two numbers', () => {
     expect(subtractTwoNumbers(3,3)).to.deep.equal(0)
     expect(subtractTwoNumbers(1,3)).to.deep.equal(0)
     expect(subtractTwoNumbers(10,4)).to.deep.equal(6)
+  })
+  it('should NOT allow negative numbers on subtraction', () =>{
+    expect(subtractTwoNumbers(4,10)).to.not.equal(-6)
   })
 })
 
@@ -34,6 +37,13 @@ describe('multiplyTwoNumbers',()=>{
   it('should multiply two numbers',()=>{
     expect(multiplyTwoNumbers(2,3)).to.deep.equal(6)
     expect(multiplyTwoNumbers(10,5)).to.deep.equal(50)
+  })
+})
+
+describe('remainderTwoNumbers',()=>{
+  it('should show the remainder using the % operator',()=>{
+    expect(remainderTwoNumbers(13,5)).to.deep.equal(3)
+    expect(remainderTwoNumbers(4,2)).to.deep.equal(0)
   })
 })
 
