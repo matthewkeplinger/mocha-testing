@@ -1,3 +1,9 @@
+// Author: Matt Keplinger
+// Date: 27 JAN 2022
+// Unit Testing with Mocha and Chai
+// Filename: tests.js
+
+//declare const for chai
 const chai = window.chai
 const expect = chai.expect
 
@@ -81,5 +87,10 @@ describe('sumArray', ()=>{
 describe('flattenArray', () =>{
   it('should concatenate an array of arrays', ()=>{
     expect (flattenArray([[1,2], [3,4]])).to.deep.equal([1,2,3,4])
+    expect (flattenArray([[1,3], [5,7]])).to.deep.equal([1,3,5,7])
+  })
+  it('should NOT leave a multi-dimensional array', ()=>{
+    expect (flattenArray([[1,2], [3,4]])).to.not.equal([[1,2],[3,4]])
+    expect (flattenArray([[1,3], [5,7]])).to.not.equal([[1,3],[5,7]])
   })
 })
