@@ -52,3 +52,12 @@ function flattenArray(arr){
   )
   return flatten;
 }
+
+//check if a string is a palindrome
+function isPalindrome(str) {
+  if (str != ''){
+    return str === str.split('').reverse().join('')
+  }else{
+    return false;
+  }
+}

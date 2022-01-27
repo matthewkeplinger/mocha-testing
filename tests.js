@@ -94,3 +94,17 @@ describe('flattenArray', () =>{
     expect (flattenArray([[1,3], [5,7]])).to.not.equal([[1,3],[5,7]])
   })
 })
+
+describe('isPalindrome', ()=>{
+  it('should return TRUE if a string is a palindrome', () => {
+    expect(isPalindrome('mom')).to.be.true
+    expect(isPalindrome('racecar')).to.be.true
+  })
+  it('should return FALSE if a string is NOT a palindrome', () => {
+    expect(isPalindrome('fire')).to.be.false
+    expect(isPalindrome('saddle')).to.be.false
+  })
+  it('should return FALSE for empty string', () => {
+    expect(isPalindrome('')).to.be.false
+  })
+})
