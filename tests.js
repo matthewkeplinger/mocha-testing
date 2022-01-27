@@ -1,21 +1,19 @@
-
-
 const chai = window.chai
 const expect = chai.expect
 
-describe('getCelcius', () => {
-  it('should convert farenheit to celcius for all values in an array', () => {
-    expect(getCelcius([23, 140, 212, 41])).to.deep.equal([-5, 60, 100, 5])
-    expect(getCelcius([-58, -22, -4, 14])).to.deep.equal([-50, -30, -20, -10])
-    expect(getCelcius([104, 122, 158, 176])).to.deep.equal([40, 50, 70, 80])
+describe('getCelsius', () => {
+  it('should convert farenheit to celsius for all values in an array', () => {
+    expect(getCelsius([23, 140, 212, 41])).to.deep.equal([-5, 60, 100, 5])
+    expect(getCelsius([-58, -22, -4, 14])).to.deep.equal([-50, -30, -20, -10])
+    expect(getCelsius([104, 122, 158, 176])).to.deep.equal([40, 50, 70, 80])
   })
 })
 
-// describe('reverseStringLoop', () => {
-//   it('should reverse a string that a user inputs and display both the original and reversed strings', () =>{
-//     expect(reverseStringLoop('taco')).to.equal('ocat')
-//   })
-// })
+describe('getFarenheit', () => {
+  it('should convert celsius to farenheit for all values in an array', () => {
+    expect(getFarenheit([0, 40, 90, 37])).to.deep.equal([32, 104, 194, 98.6])
+  })
+})
 
 describe('addTwoNumbers', () => {
   it('should add two numbers', () => {

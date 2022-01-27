@@ -1,11 +1,22 @@
+// Author: Matt Keplinger
+// Date: 27 JAN 2022
+// Unit Testing with Mocha and Chai
+
 // farenheit to celcius
 // [23, 140, 212, 41] => [-5, 60, 100, 5]
 // (32°F − 32) × 5/9 = 0°C
-
-function getCelcius(farenheit) {
+function getCelsius(farenheit) {
   return farenheit.map(value => (value -32) * 5/9)
 }
 
+//convert celsius to farenheit
+//[0, 40, 90, 37] => [32, 104, 194, 98.6]
+//(value * 9/5) + 32
+function getFarenheit(celsius) {
+  return celsius.map(value => (value * 9/5) + 32 )
+}
+
+//add two integers
 function addTwoNumbers(num,num2) {
   return num + num2;
 }
@@ -39,3 +50,4 @@ function flattenArray(arr){
   )
   return flatten;
 }
+
