@@ -23,11 +23,7 @@ function addTwoNumbers(num,num2) {
 
 //subtract two integers
 function subtractTwoNumbers(num,num2) {
- let difference = num - num2;
- if(difference < 0){
-   difference = 0
- }
- return difference;
+  return num - num2;
 }
 
 //multiply two integers

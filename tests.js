@@ -16,20 +16,40 @@ describe('getFarenheit', () => {
 })
 
 describe('addTwoNumbers', () => {
-  it('should add two numbers', () => {
+  it('should add two positive numbers', () => {
     expect(addTwoNumbers(5,3)).to.deep.equal(8)
     expect(addTwoNumbers(1,3)).to.deep.equal(4)
+  })
+  it('should add two negative numbers', () =>{
+    expect(addTwoNumbers(-3,-2)).to.deep.equal(-5)
+    expect(addTwoNumbers(-3,-4)).to.deep.equal(-7)
+  })
+  it('should add a positive and negative number', () =>{
+    expect(addTwoNumbers(-3,2)).to.deep.equal(-1)
+    expect(addTwoNumbers(4,-5)).to.deep.equal(-1)
   })
 })
 
 describe('subtractTwoNumbers', () => {
-  it('should subtract two numbers', () => {
-    expect(subtractTwoNumbers(3,3)).to.deep.equal(0)
-    expect(subtractTwoNumbers(1,3)).to.deep.equal(0)
+  it('should subtract two positive numbers and allow negative difference', () => {
+    expect(subtractTwoNumbers(1,3)).to.deep.equal(-2)
     expect(subtractTwoNumbers(10,4)).to.deep.equal(6)
   })
-  it('should NOT allow negative numbers on subtraction', () =>{
-    expect(subtractTwoNumbers(4,10)).to.not.equal(-6)
+  it('should subtract two negative numbers and allow negative difference', () =>{
+    expect(subtractTwoNumbers(-4,10)).to.deep.equal(-14)
+    expect(subtractTwoNumbers(-7,-5)).to.deep.equal(-2)
+  })
+  it('should subtract positive and negative numbers and allow positive difference', () =>{
+    expect(subtractTwoNumbers(10,-4)).to.deep.equal(14)
+    expect(subtractTwoNumbers(15,-8)).to.deep.equal(23)
+  })
+  it('should subtract positive and negative numbers and allow negative difference', () =>{
+    expect(subtractTwoNumbers(-10,4)).to.deep.equal(-14)
+    expect(subtractTwoNumbers(-15,8)).to.deep.equal(-23)
+  })
+  it('should allow a ZERO result', () =>{
+    expect(subtractTwoNumbers(-10,-10)).to.deep.equal(0)
+    expect(subtractTwoNumbers(3,3)).to.deep.equal(0)
   })
 })
 
@@ -37,6 +57,10 @@ describe('multiplyTwoNumbers',()=>{
   it('should multiply two numbers',()=>{
     expect(multiplyTwoNumbers(2,3)).to.deep.equal(6)
     expect(multiplyTwoNumbers(10,5)).to.deep.equal(50)
+  })
+  it('should allow negative numbers on multiplication', () =>{
+    expect(multiplyTwoNumbers(-4,10)).to.deep.equal(-40)
+    expect(multiplyTwoNumbers(-4,-3)).to.deep.equal(12)
   })
 })
 
