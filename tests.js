@@ -1,3 +1,5 @@
+
+
 const chai = window.chai
 const expect = chai.expect
 
@@ -34,5 +36,18 @@ describe('multiplyTwoNumbers',()=>{
   it('should multiply two numbers',()=>{
     expect(multiplyTwoNumbers(2,3)).to.deep.equal(6)
     expect(multiplyTwoNumbers(10,5)).to.deep.equal(50)
+  })
+})
+
+describe('sumArray', ()=>{
+  it('should add the values of all positive integers in an array', () => {
+    expect(sumArray([1,2,3])).to.deep.equal(6)
+    expect(sumArray([2,4,6])).to.deep.equal(12)
+  })
+})
+
+describe('flattenArray', () =>{
+  it('should concatenate an array of arrays', ()=>{
+    expect (flattenArray([[1,2], [3,4]])).to.deep.equal([1,2,3,4])
   })
 })

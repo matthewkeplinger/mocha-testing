@@ -6,24 +6,11 @@ function getCelcius(farenheit) {
   return farenheit.map(value => (value -32) * 5/9)
 }
 
-
-//reverse a user-input string (user input will be mocked for testing)
-//let userString = prompt('Enter a string to reverse:');
-
-// function reverseStringLoop(userString) {
-//     let firstString = userString;
-//     let newString = '';
-//     for (let i = userString.length - 1; i >= 0; i--) {
-//         newString += userString[i];
-//     }
-//     console.log(firstString);
-//     console.log(newString);
-// }
-
 function addTwoNumbers(num,num2) {
   return num + num2;
 }
 
+//subtract two integers
 function subtractTwoNumbers(num,num2) {
  let difference = num - num2;
  if(difference < 0){
@@ -32,6 +19,23 @@ function subtractTwoNumbers(num,num2) {
  return difference;
 }
 
+//multiply two integers
 function multiplyTwoNumbers(num,num2){
   return num * num2;
+}
+
+//sum of all positive integers in an array
+function sumArray(arr){
+  let sum = arr.reduce(
+    (previousValue, currentValue) => previousValue + currentValue, 0
+  )
+  return sum;
+}
+
+//concatenate an array of arrays into one array
+function flattenArray(arr){
+  let flatten = arr.reduce((previousValue, currentValue) => 
+  previousValue.concat(currentValue), []
+  )
+  return flatten;
 }
