@@ -17,6 +17,15 @@ function getFarenheit(celsius) {
   return celsius.map(value => (value * 9/5) + 32 )
 }
 
+//convert inches to feet and inches
+function inchToFoot(inches){
+  if(inches <= 0 ){
+    return "Error, only positive integers can be converted"
+  } else {
+    return (parseInt(inches/12) + 'ft. ' + Math.round(inches%12, 1) + 'in.')
+  }
+}
+
 //add two integers
 function addTwoNumbers(num,num2) {
   return num + num2;
@@ -51,6 +60,12 @@ function flattenArray(arr){
   previousValue.concat(currentValue), []
   )
   return flatten;
+}
+
+//average an array
+function averageArray(arr){
+  const average = arr.reduce((a,b) => a + b, 0) / arr.length;
+  return average;
 }
 
 //check if a string is a palindrome

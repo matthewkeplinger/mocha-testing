@@ -3,6 +3,7 @@
 // Unit Testing with Mocha and Chai
 // Filename: tests.js
 
+
 //declare const for chai
 const chai = window.chai
 const expect = chai.expect
@@ -18,6 +19,21 @@ describe('getCelsius', () => {
 describe('getFarenheit', () => {
   it('should convert celsius to farenheit for all values in an array', () => {
     expect(getFarenheit([0, 40, 90, 37])).to.deep.equal([32, 104, 194, 98.6])
+  })
+})
+
+describe('inchToFoot',() =>{
+  it('should take an input of 12 inches and convert it to 1 foot', () =>{
+    expect(inchToFoot(12)).to.deep.equal('1ft. 0in.')
+  })
+  it('should take an input of 50 inches and convert it to 4ft. 2in.', () =>{
+    expect(inchToFoot(50)).to.deep.equal('4ft. 2in.')
+  })
+  it('should NOT allow 0 as an input',() =>{
+    expect(inchToFoot(0)).to.deep.equal('Error, only positive integers can be converted')
+  })
+  it('should NOT allow negative integers as an input',() =>{
+    expect(inchToFoot(-24)).to.deep.equal('Error, only positive integers can be converted')
   })
 })
 
@@ -60,12 +76,14 @@ describe('subtractTwoNumbers', () => {
 })
 
 describe('multiplyTwoNumbers',()=>{
-  it('should multiply two numbers',()=>{
+  it('should multiply two positive numbers',()=>{
     expect(multiplyTwoNumbers(2,3)).to.deep.equal(6)
     expect(multiplyTwoNumbers(10,5)).to.deep.equal(50)
   })
-  it('should allow negative numbers on multiplication', () =>{
+  it('should allow one negative number on multiplication', () =>{
     expect(multiplyTwoNumbers(-4,10)).to.deep.equal(-40)
+  })
+  it('should allow both numbers to be negative on multiplication',() =>{
     expect(multiplyTwoNumbers(-4,-3)).to.deep.equal(12)
   })
 })
@@ -82,6 +100,12 @@ describe('sumArray', ()=>{
     expect(sumArray([1,2,3])).to.deep.equal(6)
     expect(sumArray([2,4,6])).to.deep.equal(12)
   })
+  it('should add for negative and positive integers in an array',() => {
+    expect(sumArray([2,-2])).to.deep.equal(0)
+  })
+  it('should add the values of all negative integers in an array',() => {
+    expect(sumArray([-1,-1,-3])).to.deep.equal(-5)
+  })
 })
 
 describe('flattenArray', () =>{
@@ -92,6 +116,15 @@ describe('flattenArray', () =>{
   it('should NOT leave a multi-dimensional array', ()=>{
     expect (flattenArray([[1,2], [3,4]])).to.not.equal([[1,2],[3,4]])
     expect (flattenArray([[1,3], [5,7]])).to.not.equal([[1,3],[5,7]])
+  })
+})
+
+describe('averageArray', () => {
+  it('should display average for calculation of array [1,2,3] with result of 2', () =>{
+    expect(averageArray([1,2,3])).to.deep.equal(2)
+  })
+  it('should display average for calculation of array [5,5,2,8] with average of 4', () => {
+    expect(averageArray([5,5,2,8])).to.deep.equal(5)
   })
 })
 
