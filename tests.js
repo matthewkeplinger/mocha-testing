@@ -3,7 +3,6 @@
 // Unit Testing with Mocha and Chai
 // Filename: tests.js
 
-//declare const for chai
 const chai = window.chai
 const expect = chai.expect
 
@@ -179,5 +178,40 @@ describe('isPalindrome', ()=>{
   })
   it('should return FALSE for empty string', () => {
     expect(isPalindrome('')).to.be.false
+  })
+})
+
+describe('numToBinary', () => {
+  it('should take a number in and convert to binary equivalent', () => {
+    expect(numToBinary(9)).to.deep.equal('1001')
+    expect(numToBinary(3)).to.deep.equal('11')
+  })
+  it('should take a decimal number in and return a string output', () => {
+    expect(numToBinary(2.2)).to.deep.equal('10.00110011001100110011001100110011001100110011001101')
+  })
+  it('should NOT allow non-numbers as input', () => {
+    expect(numToBinary('a')).to.deep.equal('Error')
+  })
+})
+
+describe('binaryToNum', () => {
+  it('should take in a string of 0 or 1 and return a decimal number', () => {
+    expect(binaryToNum('1001')).to.deep.equal(9)
+    expect(binaryToNum('11')).to.deep.equal(3)
+  })
+})
+
+describe('numToHex', () => {
+  it('should take a number in and convert to binary equivalent', () => {
+    expect(numToHex(4579)).to.deep.equal('11e3')
+  })
+  it('should NOT allow non-numbers as input', () => {
+    expect(numToHex('12a3')).to.deep.equal('Error')
+  })
+})
+
+describe('hexToNum', () => {
+  it('should take in a string of Hex and convert to decimal', () => {
+    expect(hexToNum('11e3')).to.deep.equal(4579)
   })
 })

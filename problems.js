@@ -130,3 +130,35 @@ function isPalindrome(str) {
     return false;
   }
 }
+
+//SHOULD take in a whole number and convert to binary
+//SHOULD take in a decimal number and convert to binary output
+//SHOULD NOT allow non-numbers
+function numToBinary(num) {
+  if (isNaN(num)){
+    return 'Error'
+  }else{
+    return num.toString(2)
+  }
+}
+
+//SHOULD take in a string and convert to decimal
+function binaryToNum(binaryString){
+  let result = parseInt(binaryString, 2);
+  return result;
+}
+
+//SHOULD take in a number and convert to HEX
+//SHOULD take in a string and convert it to Num
+function numToHex(num) {
+  if(num >= 0){
+    return num.toString(16);
+  } else {
+    return 'Error'
+  }
+}
+
+//SHOULD take in a hex string and convert to BASE-16 (Decimal)
+function hexToNum(hexStr){
+  return parseInt(hexStr, 16);
+}
