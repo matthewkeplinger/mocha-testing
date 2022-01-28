@@ -21,6 +21,20 @@ describe('getFarenheit', () => {
   })
 })
 
+describe('feetToMiles',() =>{
+  it('should convert 5280 feet to 1 mile', () =>{
+    expect(feetToMiles(5280)).to.deep.equal(1)
+  })
+  it('should round the result to 7 decimal places', () =>{
+    expect(feetToMiles(3500)).to.deep.equal(0.6628788)
+  })
+  it('should NOT allow negative inputs',() =>{
+    expect(feetToMiles(-30)).to.deep.equal('Error on input')
+  })
+  it('should NOT allow non-number inputs', () => {
+    expect(feetToMiles('a')).to.deep.equal('Error on input')
+  })
+})
 describe('inchesToMeters',() => {
   it('should take a 54 inches and convert to 1.3716 meters',() =>{
     expect(inchesToMeters(54)).to.deep.equal(1.3716)

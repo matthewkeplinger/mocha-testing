@@ -17,6 +17,19 @@ function getFarenheit(celsius) {
   return celsius.map(value => (value * 9/5) + 32 )
 }
 
+//SHOULD convert feet to miles
+//SHOULD round to 7 decimal places
+//SHOULD NOT allow negative inputs
+//SHOULD NOT allow non-number inputs
+function feetToMiles(feet){
+  let conversion = parseInt(feet) / 5280;
+  if (feet <=0 || isNaN(feet)){
+    return 'Error on input'
+  } else {
+    return parseFloat(conversion.toFixed(7));
+  }
+}
+
 //SHOULD convert inches to meters
 //SHOULD round to four decimal places
 //SHOULD NOT allow negative inputs
@@ -31,7 +44,6 @@ function inchesToMeters(inches){
       return parseFloat(conversion.toFixed(4))
     }
   }
-
 
 //SHOULD convert inches to feet and inches
 //SHOULD NOT allow negative numbers
