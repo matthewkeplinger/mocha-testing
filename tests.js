@@ -221,3 +221,10 @@ describe('reverseString', () => {
     expect(reverseString('fizz')).to.be.equal('zzif')
   })
 })
+
+describe('smashString', () => {
+  it('should count instances of each char in a string of chars', () => {
+    expect(smashString('aaabbbbccccc')).to.deep.equal('3a4b5c')
+    expect(smashString('ddddmmmmm2222')).to.deep.equal('4d5m42')
+  })
+})

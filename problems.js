@@ -171,3 +171,18 @@ function reverseString(string){
   .join('')
 }
 
+//SHOULD take a string and compress, count number of instances of each char
+function smashString(smooshString) {
+    let stringIn = smooshString;
+    let stringOut = '';
+    let instanceCounter = 0;
+
+    for (let i = 0; i < stringIn.length; i++) {
+        instanceCounter++;
+        if (stringIn[i] != stringIn[i + 1]) {
+            stringOut += instanceCounter + stringIn[i];
+            instanceCounter = 0;
+        }
+    }
+    return stringOut;
+}
