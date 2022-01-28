@@ -17,7 +17,10 @@ function getFarenheit(celsius) {
   return celsius.map(value => (value * 9/5) + 32 )
 }
 
-//convert inches to meters
+//SHOULD convert inches to meters
+//SHOULD round to four decimal places
+//SHOULD NOT allow negative inputs
+//SHOULD NOT allow non-number inputs
 function inchesToMeters(inches){
     let conversion = parseInt(inches) / 39.3701
     if(inches <= 0){
@@ -30,7 +33,9 @@ function inchesToMeters(inches){
   }
 
 
-//convert inches to feet and inches
+//SHOULD convert inches to feet and inches
+//SHOULD NOT allow negative numbers
+//SHOULD NOT allow non-numbers
 function inchToFoot(inches){
   if(inches <= 0 ){
     return "Error, only positive integers can be converted"
@@ -42,7 +47,8 @@ function inchToFoot(inches){
   }
 }
 
-//add two integers
+//SHOULD add two integers (positive, negative, or mixed sign)
+//SHOULD NOT allow non-numbers
 function addTwoNumbers(num,num2) {
   if(isNaN(num) || isNaN(num2)){
     return 'Not a Number'
@@ -51,7 +57,8 @@ function addTwoNumbers(num,num2) {
   }
 }
 
-//subtract two integers
+//SHOULD subtract two integers (positive, negative, or mixed sign)
+//SHOULD NOT allow non-numbers
 function subtractTwoNumbers(num,num2) {
   if(isNaN(num) || isNaN(num2)){
     return 'Not a Number'
@@ -60,7 +67,8 @@ function subtractTwoNumbers(num,num2) {
   }
 }
 
-//multiply two integers
+//SHOULD multiply two integers (positive, negative, or mixed sign)
+//SHOULD NOT allow non-numbers
 function multiplyTwoNumbers(num,num2){
   if(isNaN(num) || isNaN(num2)){
     return 'Not a Number'
@@ -69,7 +77,8 @@ function multiplyTwoNumbers(num,num2){
   }
 }
 
-//find remainder of two numbers
+//SHOULD find remainder of two numbers
+//SHOULD NOT allow non-numbers
 function remainderTwoNumbers(num,num2){
   if(isNaN(num) || isNaN(num2)){
     return 'Not a Number'
@@ -78,7 +87,7 @@ function remainderTwoNumbers(num,num2){
   }
 }
 
-//sum of all integers in an array
+//SHOULD calculate the sum of all integers in an array (positive, negative, or mixed sign)
 function sumArray(arr){
   let sum = arr.reduce(
     (previousValue, currentValue) => previousValue + currentValue, 0
@@ -86,7 +95,8 @@ function sumArray(arr){
   return sum;
 }
 
-//concatenate an array of arrays into one array
+//SHOULD concatenate an array of arrays into one array
+//SHOULD NOT leave multi-dimensional arrays
 function flattenArray(arr){
   let flatten = arr.reduce((previousValue, currentValue) => 
   previousValue.concat(currentValue), []
@@ -94,13 +104,13 @@ function flattenArray(arr){
   return flatten;
 }
 
-//average an array
+//SHOULD average an array
 function averageArray(arr){
   const average = arr.reduce((previousValue,currentValue) => previousValue + currentValue, 0) / arr.length;
   return average;
 }
 
-//check if a string is a palindrome
+//SHOULD check if a string is a palindrome
 function isPalindrome(str) {
   if (str != ''){
     return str === str.split('').reverse().join('')
