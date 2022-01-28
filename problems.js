@@ -17,6 +17,19 @@ function getFarenheit(celsius) {
   return celsius.map(value => (value * 9/5) + 32 )
 }
 
+//convert inches to meters
+function inchesToMeters(inches){
+    let conversion = parseInt(inches) / 39.3701
+    if(inches <= 0){
+      return "Error, not a positive result"
+    } else if (isNaN(inches)){
+      return "Not a Number"
+    } else {
+      return parseFloat(conversion.toFixed(4))
+    }
+  }
+
+
 //convert inches to feet and inches
 function inchToFoot(inches){
   if(inches <= 0 ){
@@ -65,7 +78,7 @@ function remainderTwoNumbers(num,num2){
   }
 }
 
-//sum of all positive integers in an array
+//sum of all integers in an array
 function sumArray(arr){
   let sum = arr.reduce(
     (previousValue, currentValue) => previousValue + currentValue, 0

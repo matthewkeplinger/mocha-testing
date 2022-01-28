@@ -3,7 +3,6 @@
 // Unit Testing with Mocha and Chai
 // Filename: tests.js
 
-
 //declare const for chai
 const chai = window.chai
 const expect = chai.expect
@@ -19,6 +18,18 @@ describe('getCelsius', () => {
 describe('getFarenheit', () => {
   it('should convert celsius to farenheit for all values in an array', () => {
     expect(getFarenheit([0, 40, 90, 37])).to.deep.equal([32, 104, 194, 98.6])
+  })
+})
+
+describe('inchesToMeters',() => {
+  it('should take a 54 inches and convert to 1.3716 meters',() =>{
+    expect(inchesToMeters(54)).to.deep.equal(1.3716)
+  })
+  it('should NOT allow negative numbers for inch input', () =>{
+    expect(inchesToMeters(-2)).to.deep.equal('Error, not a positive result')
+  })
+  it('should NOT allow non-numbers to be input for inches', () =>{
+    expect(inchesToMeters('a')).to.deep.equal('Not a Number')
   })
 })
 
@@ -138,7 +149,7 @@ describe('averageArray', () => {
   it('should display average for calculation of array [1,2,3] with result of 2', () =>{
     expect(averageArray([1,2,3])).to.deep.equal(2)
   })
-  it('should display average for calculation of array [5,5,2,8] with average of 4', () => {
+  it('should display average for calculation of array [5,5,2,8] with average of 5', () => {
     expect(averageArray([5,5,2,8])).to.deep.equal(5)
   })
 })
