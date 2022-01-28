@@ -35,6 +35,9 @@ describe('inchToFoot',() =>{
   it('should NOT allow negative integers as an input',() =>{
     expect(inchToFoot(-24)).to.deep.equal('Error, only positive integers can be converted')
   })
+  it('should NOT allow non-numbers as an input', () =>{
+    expect(inchToFoot('A')).to.deep.equal('Not a Number')
+  })
 })
 
 describe('addTwoNumbers', () => {
@@ -49,6 +52,9 @@ describe('addTwoNumbers', () => {
   it('should add a positive and negative number', () =>{
     expect(addTwoNumbers(-3,2)).to.deep.equal(-1)
     expect(addTwoNumbers(4,-5)).to.deep.equal(-1)
+  })
+  it('should NOT allow non-numbers as input',() =>{
+    expect(addTwoNumbers('d',3)).to.deep.equal('Not a Number')
   })
 })
 
@@ -73,6 +79,9 @@ describe('subtractTwoNumbers', () => {
     expect(subtractTwoNumbers(-10,-10)).to.deep.equal(0)
     expect(subtractTwoNumbers(3,3)).to.deep.equal(0)
   })
+  it('should NOT allow non-numbers as input',() =>{
+    expect(subtractTwoNumbers('d',3)).to.deep.equal('Not a Number')
+  })
 })
 
 describe('multiplyTwoNumbers',()=>{
@@ -86,12 +95,18 @@ describe('multiplyTwoNumbers',()=>{
   it('should allow both numbers to be negative on multiplication',() =>{
     expect(multiplyTwoNumbers(-4,-3)).to.deep.equal(12)
   })
+  it('should NOT allow non-numbers as input',() =>{
+    expect(multiplyTwoNumbers('d',3)).to.deep.equal('Not a Number')
+  })
 })
 
 describe('remainderTwoNumbers',()=>{
   it('should show the remainder using the % operator',()=>{
     expect(remainderTwoNumbers(13,5)).to.deep.equal(3)
     expect(remainderTwoNumbers(4,2)).to.deep.equal(0)
+  })
+  it('should NOT allow non-numbers as input',() =>{
+    expect(remainderTwoNumbers('d',3)).to.deep.equal('Not a Number')
   })
 })
 

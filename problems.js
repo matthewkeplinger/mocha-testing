@@ -21,6 +21,9 @@ function getFarenheit(celsius) {
 function inchToFoot(inches){
   if(inches <= 0 ){
     return "Error, only positive integers can be converted"
+  }
+  else if(isNaN(inches)){
+    return "Not a Number"
   } else {
     return (parseInt(inches/12) + 'ft. ' + Math.round(inches%12, 1) + 'in.')
   }
@@ -28,22 +31,38 @@ function inchToFoot(inches){
 
 //add two integers
 function addTwoNumbers(num,num2) {
-  return num + num2;
+  if(isNaN(num) || isNaN(num2)){
+    return 'Not a Number'
+  } else {
+    return num + num2;
+  }
 }
 
 //subtract two integers
 function subtractTwoNumbers(num,num2) {
-  return num - num2;
+  if(isNaN(num) || isNaN(num2)){
+    return 'Not a Number'
+  } else {
+    return num - num2;
+  }
 }
 
 //multiply two integers
 function multiplyTwoNumbers(num,num2){
-  return num * num2;
+  if(isNaN(num) || isNaN(num2)){
+    return 'Not a Number'
+  } else {
+    return num * num2;
+  }
 }
 
 //find remainder of two numbers
 function remainderTwoNumbers(num,num2){
-  return num % num2;
+  if(isNaN(num) || isNaN(num2)){
+    return 'Not a Number'
+  } else {
+    return num % num2;
+  }
 }
 
 //sum of all positive integers in an array
@@ -64,7 +83,7 @@ function flattenArray(arr){
 
 //average an array
 function averageArray(arr){
-  const average = arr.reduce((a,b) => a + b, 0) / arr.length;
+  const average = arr.reduce((previousValue,currentValue) => previousValue + currentValue, 0) / arr.length;
   return average;
 }
 
