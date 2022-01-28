@@ -215,3 +215,9 @@ describe('hexToNum', () => {
     expect(hexToNum('11e3')).to.deep.equal(4579)
   })
 })
+
+describe('reverseString', () => {
+  it('should reverse the input string', ()=>{
+    expect(reverseString('fizz')).to.be.equal('zzif')
+  })
+})

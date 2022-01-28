@@ -162,3 +162,12 @@ function numToHex(num) {
 function hexToNum(hexStr){
   return parseInt(hexStr, 16);
 }
+
+//SHOULD take a string in and reverse it
+function reverseString(string){
+  return string
+  .split('')
+  .reverse()
+  .join('')
+}
+
